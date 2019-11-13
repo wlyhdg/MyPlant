@@ -1,0 +1,57 @@
+.grad-block {
+    background-image: linear-gradient(-90deg, white, green);
+    padding: 10%;
+}
+
+.solo-title {
+    margin-top: 11%;
+}
+.credentials-choice {
+    margin: 5% 0% 1%;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.custom-link {
+    color:gray
+}
+
+.custom-link:hover {
+    color: green;
+}
+
+.ib {
+    display: inline-block;
+}
+
+.app-border {
+    border: 0.1rem;
+    border-style: solid;
+    border-color: green;
+    padding: 10px;
+    border-radius: 3%
+}
+
+.logout {
+    position: absolute;
+    right: 2%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    /* background-color: rgba(72, 112, 38, 0.1); */
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.7rem;
+}

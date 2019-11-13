@@ -1,0 +1,20 @@
+{
+  "name": "myplant",
+  "version": "1.0.0",
+  "description": "First side project after completing full-stack lessons. This project will focus on maintaining a healthy daily diet for the individual consumer, as well as tracking the amount of calories needed to reach a certain threshold.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "author": "wlyhdg",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.6.11"
+  }
+}
