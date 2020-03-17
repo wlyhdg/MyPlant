@@ -1,0 +1,12 @@
+/dist
+node_modules
+eslintrc.js
+.env
+.DS_Store
+Thumbs.db
+db.json
+*.log
+public/
+.deploy*/
+src/_drafts
+package-lock.json
