@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const User = require('../../models/User');
-const tkh = require('../../../middleware/tokenHandler')
+const tkh = require('../../middleware/tokenHandler.js')
 
 router.post("/login", (req, res) => {
   const { nameOrEmail, password } = req.body

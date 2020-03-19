@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const tkh = require('../../../middleware/tokenHandler')
+const tkh = require('../../middleware/tokenHandler')
 
 const router = express.Router();
 

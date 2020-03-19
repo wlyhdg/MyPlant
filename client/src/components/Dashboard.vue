@@ -31,15 +31,7 @@
       </div>
     </div>
 
-    <section class="daily-progress">
-      <v-progress-circular
-        class="pi-progress"
-        color="green darken-1"
-        :value="40"
-        :size="200"
-        :width="25"
-      > <span class="pi-percent">{{ value }}% </span><p>800 / 2000 cal</p></v-progress-circular>
-    </section>
+    <ProgressPi :dailyCals="dailyCals"/>
 
     <MadeFooter :showLogo="true"/>
   </div>
@@ -49,6 +41,7 @@
 import MadeFooter from './MadeFooter.vue';
 import Bmi from './widgets/Bmi.vue'
 import NutriFacts from './widgets/NutriFacts.vue';
+import ProgressPi from './ProgressPi.vue'
 import { mapGetters, mapState, mapActions } from 'vuex';
 import _ from 'lodash';
 import axios from 'axios';
@@ -58,14 +51,16 @@ export default {
   components: {
     MadeFooter,
     Bmi,
-    NutriFacts
+    NutriFacts,
+    ProgressPi
   },
   data () {
     return {
       bmi: '',
       usn: '',
       mounted: false,
-      value: 40
+      value: 40,
+      dailyCals: 300
     }
   },
   methods: {
@@ -135,16 +130,6 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
-
-  .daily-progress {
-    position: relative;
-    margin-bottom: 10%;
-  }
-
-  .pi-percent {
-    font-size: 2.5rem;
-  }
-
 
   .-exit {
     cursor: pointer;
