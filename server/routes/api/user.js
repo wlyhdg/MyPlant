@@ -50,8 +50,26 @@ router.post("/", (req, res) => {
   });
 });
 
-router.post("/bmi", (req, res) => {
+router.get("/bmi", (req, res) => {
     console.log(req.body)
+}) 
+
+router.patch("/bmi", (req, res) => {
+    const {bmi, user} = req.body
+    if(user) { 
+        User.updateOne(
+            {_id: user.id}, 
+            {$set: {bmi}},
+            (err) => {
+                if(!err) {
+                    console.log('PATCH is good!')
+                    res.status(200).json({msg: `Successfully updated ${user.username}'s BMI`})
+                } else {
+                    console.log('PATCH is fuckin trash!')
+                    res.status(404).json({err: "Information invalid: " + err})
+                }
+            })
+    }
 }) 
 
 module.exports = router;

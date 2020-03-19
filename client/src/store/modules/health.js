@@ -1,14 +1,18 @@
-// import axios from "axios";
+import axios from "axios";
 
 const state = {
   bmi: 0
 }
 
 const actions = {
-  updateBmi({commit}, newBmi) {
+  async updateBmi({commit}, newBmi) {
+    let user = JSON.parse(localStorage.getItem('user'));
     commit('refreshBmi', newBmi)
-    // axios.post("/api/user/bmi", newBmi)
-    // .then()
+    axios.patch("/api/user/bmi", {
+      bmi: newBmi,
+      user: user.user 
+    })
+    
   }
 };
 

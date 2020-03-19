@@ -41,7 +41,7 @@
 import MadeFooter from './MadeFooter.vue';
 import Bmi from './widgets/Bmi.vue'
 import NutriFacts from './widgets/NutriFacts.vue';
-import ProgressPi from './ProgressPi.vue'
+import ProgressPi from './widgets/ProgressPi.vue'
 import { mapGetters, mapState, mapActions } from 'vuex';
 import _ from 'lodash';
 import axios from 'axios';

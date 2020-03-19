@@ -3,7 +3,7 @@
   <v-progress-circular
     class="pi-progress"
     color="green darken-1"
-    :value="40"
+    :value="value"
     :size="200"
     :width="25"
   > <span class="pi-percent">{{ value }}% </span><p>{{dailyCals }} / 2000 cal</p></v-progress-circular>
