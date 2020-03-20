@@ -56,7 +56,7 @@ export default {
   },
   data () {
     return {
-      bmi: '',
+      // bmi: '',
       usn: '',
       mounted: false,
       value: 40,

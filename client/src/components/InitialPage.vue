@@ -48,12 +48,24 @@ export default {
       position: relative;
       background: url('../assets/images/garden.jpeg') center top/cover;
       padding: 10%;
-      z-index: 3
+      z-index: 3;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
   }
 
   .grad-block h2, .grad-block small {
     position: relative;
     z-index: 4;
+  }
+
+  .grad-block h2 {
+    font-size: 2.5rem;
+  }
+
+  .grad-block small {
+    font-size: 1rem;
   }
 
   .grad-block::after {

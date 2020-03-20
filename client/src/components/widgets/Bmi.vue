@@ -23,17 +23,22 @@ export default {
     }
   },
   methods: {
-    ...mapActions({updateBmi: 'updateBmi'}),
+    // ...mapActions({updateBmi: 'updateBmi'}),
+    ...mapActions(['updateBmi', 'fetchDbBmi']),
     calculateBmi () {
       const bmi = ( this.vweight / this.vheight / this.vheight ) * 703;
       const bmiRounded = Math.round(bmi * 10) / 10;
       this.updateBmi(bmiRounded);
       this.bmi = this.getBmi
-      console.log("T@@@@GEEWWWERWEWWW" + this.bmu)
     }
   },
-  computed: {...mapGetters(['getBmi'])
-    }
+  computed: {
+    ...mapGetters(['getBmi'])
+  },
+  created() {
+    this.fetchDbBmi()
+    this.bmi = this.getBmi
+  }
 }
 
 </script>

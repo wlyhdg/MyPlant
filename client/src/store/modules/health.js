@@ -5,6 +5,13 @@ const state = {
 }
 
 const actions = {
+  async fetchDbBmi({commit}) {
+    await axios.get('/api/user/bmi')
+    .then(fetchedBmi => {
+      commit('setFetchedBmi', fetchedBmi)
+    })
+    .catch(err => console.log(err))
+  },
   async updateBmi({commit}, newBmi) {
     let user = JSON.parse(localStorage.getItem('user'));
     commit('refreshBmi', newBmi)
@@ -21,7 +28,8 @@ const getters = {
 };
 
 const mutations = {
-  refreshBmi: (state, newBmi) => (state.bmi = newBmi)
+  refreshBmi: (state, newBmi) => (state.bmi = newBmi),
+  setFetchedBmi: (state, fetchedBmi) => state.bmi = fetchedBmi.data.bmi
 };
 
 export default {

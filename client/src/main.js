@@ -43,6 +43,7 @@ new Vue({
   created() {
     let user = localStorage.getItem('user')
     if(user) {
+      // eslint-disable-next-line no-console
       this.$store.commit('setUserData', JSON.parse(user))
     }
   },

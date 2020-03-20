@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const tkh = require('../../middleware/tokenHandler.js')
 
 const User = require('../../models/User');
 
@@ -50,8 +51,14 @@ router.post("/", (req, res) => {
   });
 });
 
-router.get("/bmi", (req, res) => {
-    console.log(req.body)
+router.get("/bmi", tkh, (req, res) => {
+    console.log(req.user)
+    User.findById(req.user.id, (err, foundUser) => {
+        if (err) {
+            res.json(400).response({err})
+        }
+        res.json({bmi: foundUser.bmi || 0})
+    })
 }) 
 
 router.patch("/bmi", (req, res) => {
