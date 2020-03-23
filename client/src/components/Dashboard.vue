@@ -60,7 +60,7 @@ export default {
       usn: '',
       mounted: false,
       value: 40,
-      dailyCals: 300
+      dailyCals: 0
     }
   },
   methods: {

@@ -6,7 +6,7 @@
     :value="value"
     :size="200"
     :width="25"
-  > <span class="pi-percent">{{ value }}% </span><p>{{dailyCals }} / 2000 cal</p></v-progress-circular>
+  > <span class="pi-percent">{{ value }}% </span><p>{{ dailyCals }} / 2000 cal</p></v-progress-circular>
 </section>
 </template>
 
