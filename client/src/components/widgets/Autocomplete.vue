@@ -5,7 +5,8 @@
       id="autocomplete-finds"
     >
       <li class="food-search-item" @mouseover="getCalories" @click.stop="getFoodInfo" v-for="(query, index) in queries" :key="index">
-        {{ query }}
+        <p class="food-search-item__query">{{ query }}</p>
+        <!-- <small class="food-search-item__calories">{{ calories }} cal</small> -->
       </li>
     </ul>
   </div>
@@ -20,7 +21,8 @@ export default {
   props: ['textToComplete'],
   data() {
     return {
-      'queries': ''
+      'queries': '',
+      calories: '35'
     }
   },
   watch: {
@@ -45,8 +47,13 @@ export default {
     getCalories(e) {
       console.log('e')
     },
-    getFoodInfo(){
-      console.log("AUTOCOMPLETE level")
+    getFoodInfo($event){
+      let keyword;
+      if(event.target.innerText.length > 0) {
+        keyword = event.target.innerText.split(' ').join('%20');
+      }
+      axios.get(`https://api.nal.usda.gov/fdc/v1/search?api_key=ArQ4DdlGs5voZJAlBi7ATaVqMS31QQVByKkeBt2N&generalSearchInput=${keyword}`)
+      .then(res => console.log(res))
     }
   }
 }
@@ -63,11 +70,25 @@ export default {
     opacity: 0.9;
     margin-left: 10%; 
     z-index: 2;
+
   }
 
   #autocomplete-finds li{
     list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 7px auto;
   }
+
+.food-search-item__query {
+  /* margin-right: 30px; */
+  margin-bottom: 0 !important;
+}
+
+/* .food-search-item__calories {
+  color: darkgray;
+} */
 
   li:hover {
     background: rgba(172, 255, 47, 0.418);

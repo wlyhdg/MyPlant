@@ -57,7 +57,7 @@ const mutations = {
   setUserData: (state, userObj) => {
     localStorage.setItem('user', JSON.stringify(userObj));
     // state.token = token
-    axios.defaults.headers['x-auth-token'] = userObj.token
+    axios.defaults.headers['X-Auth-Token'] = userObj.token
     state.user = userObj.user
   },
   validateUser: (state) => state.isAuthenticated = true,

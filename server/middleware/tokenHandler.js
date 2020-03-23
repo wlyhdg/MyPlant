@@ -2,7 +2,7 @@ require('dotenv').config()
 const jwt = require('jsonwebtoken');
 
 function tokenHandler(req, res, next) {
-  const token = req.header('x-auth-token');
+  const token = req.header('X-Auth-Token');
   if (!token) {
     res.status(401).json({msg: "Authorization Error. No token provided."})
   }
