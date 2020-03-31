@@ -52,8 +52,8 @@ export default {
       if(event.target.innerText.length > 0) {
         keyword = event.target.innerText.split(' ').join('%20');
       }
-      axios.get(`https://api.nal.usda.gov/fdc/v1/search?api_key=ArQ4DdlGs5voZJAlBi7ATaVqMS31QQVByKkeBt2N&generalSearchInput=${keyword}`)
-      .then(res => console.log(res))
+      // axios.get(`https://api.nal.usda.gov/fdc/v1/search?api_key=ArQ4DdlGs5voZJAlBi7ATaVqMS31QQVByKkeBt2N&generalSearchInput=${keyword}`)
+      // .then(res => console.log(res))
     }
   }
 }
