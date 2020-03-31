@@ -52,7 +52,6 @@ router.post("/", (req, res) => {
 });
 
 router.get("/bmi", tkh, (req, res) => {
-    console.log(req.user)
     User.findById(req.user.id, (err, foundUser) => {
         if (err) {
             res.json(400).response({err})
@@ -69,10 +68,8 @@ router.patch("/bmi", (req, res) => {
             {$set: {bmi}},
             (err) => {
                 if(!err) {
-                    console.log('PATCH is good!')
                     res.status(200).json({msg: `Successfully updated ${user.username}'s BMI`})
                 } else {
-                    console.log('PATCH is fuckin trash!')
                     res.status(404).json({err: "Information invalid: " + err})
                 }
             })
